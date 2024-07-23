@@ -15,20 +15,16 @@ function adjustHealthBars(maxLife) {
   playerHealthBar.value = maxLife;
 }
 
-function dealMonsterDamage(damage, stage) {
-  const dealtDamage = Math.random() * (damage + stage * 10);
-  if (monsterHealthBar !== 0) {
-    monsterHealthBar.value = +monsterHealthBar.value - dealtDamage;
+function dealMonsterDamage(damage) {
+  if (monsterHealthBar.value !== 0) {
+    monsterHealthBar.value = monsterHealthBar.value - damage;
   }
-  return dealtDamage;
 }
 
 function dealPlayerDamage(damage) {
-  const dealtDamage = Math.floor(Math.random() * damage);
   if (playerHealthBar.value !== 0) {
-    playerHealthBar.value = playerHealthBar.value - dealtDamage;
+    playerHealthBar.value = playerHealthBar.value - damage;
   }
-  return dealtDamage;
 }
 
 function increasePlayerHealth(healValue) {
