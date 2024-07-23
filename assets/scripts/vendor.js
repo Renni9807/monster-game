@@ -21,9 +21,9 @@ function dealMonsterDamage(damage) {
 }
 
 function dealPlayerDamage(damage) {
-  // const dealtDamage = Math.random() * damage;
+  const dealtDamage = Math.floor(Math.random() * damage);
   playerHealthBar.value = playerHealthBar.value - damage;
-  // return dealtDamage;
+  return dealtDamage;
 }
 
 function increasePlayerHealth(healValue) {
